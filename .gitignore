@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# PyInstaller 构建产物
+build/
+dist/
+
+# 本地快捷方式 / 日志
+*.lnk
+*.log
