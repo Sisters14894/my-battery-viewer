@@ -7,10 +7,17 @@ Hi75C Pro 键盘** 三台设备的电量。
 界面是本地 Web 前端（标准库 `http.server` + Edge/Chrome 应用窗口）。
 打包用 PyInstaller（仅构建期需要）。
 
+## 下载
+
+不想自己打包的话，直接下 [Releases](https://github.com/Sisters14894/my-battery-viewer/releases)
+里的单文件 exe（`MyBatteryViewer.exe`，约 8.7 MB，双击即用，不需要装 Python）：
+
+**[⬇ 下载 v1.0.0](https://github.com/Sisters14894/my-battery-viewer/releases/download/v1.0.0/MyBatteryViewer.exe)**
+
 ## 快速开始
 
 ```bat
-:: 方式一：直接用打包好的 exe（dist\设备电量.exe）
+:: 方式一：直接用打包好的 exe（dist\设备电量.exe，或上节下载的 MyBatteryViewer.exe）
 ::   双击 = 面板窗口 + 托盘图标；再次双击 = 唤起新窗口；托盘右键可退出
 
 :: 方式二：源码运行
@@ -25,7 +32,7 @@ python probe.py               :: 排查问题 / 适配新设备
 
 **Web 面板**：暗色玻璃质感三卡片，每张卡片有设备图标、连接方式、
 大号百分比（颜色随电量）、流光进度条、数据来源说明；顶部可切自动刷新
-与间隔（15 秒 ~ 10 分钟）；低电量 (<30%) 卡片带红光呼吸提示。
+与间隔（15 秒至 10 分钟）；低电量 (<30%) 卡片带红光呼吸提示。
 本地 HTTP 服务只绑 127.0.0.1 固定端口（8899，被占自动顺延），不对外网开放。
 
 窗口尺寸：应用窗口使用独立的 Edge 配置目录（`%LOCALAPPDATA%\MyBatteryViewer\edge-profile`，
@@ -65,7 +72,7 @@ python probe.py               :: 排查问题 / 适配新设备
 ## 三种使用形态
 
 1. **Web 面板**：暗色玻璃质感三卡片，大号百分比 + 流光进度条 + 数据来源，
-   可选 15 秒 ~ 10 分钟自动刷新，低电量卡片红光呼吸提示。
+   可选 15 秒至 10 分钟自动刷新，低电量卡片红光呼吸提示。
 2. **托盘常驻**（`tray_app.py --tray-only`）：一个托盘图标，数字显示三台中
    **最低**的电量，颜色随电量变化（绿 ≥60 / 黄 30-59 / 红 <30 / 灰=全部未连接）。
    **悬停** tooltip 一行列出三台各自电量；**右键**弹菜单逐条显示三台电量，
